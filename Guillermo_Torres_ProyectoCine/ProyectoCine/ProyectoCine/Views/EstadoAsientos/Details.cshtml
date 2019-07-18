@@ -1,0 +1,42 @@
+﻿@model ProyectoCine.Models.EstadoAsientos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EstadoAsientos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DestallesAsiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestallesAsiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Disponible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Disponible)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoDisponible)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoDisponible)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EstadoAsientosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

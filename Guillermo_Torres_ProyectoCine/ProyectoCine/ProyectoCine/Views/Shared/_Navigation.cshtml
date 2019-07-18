@@ -1,0 +1,38 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+            <div class="navbar-header" align="left">
+                @Html.ActionLink("Proyecto Cine", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <li class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")&nbsp&nbsp&nbsp</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")&nbsp&nbsp&nbsp</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")&nbsp&nbsp&nbsp</li>
+                        <li class="nav-item dropdown">
+                            <a button class="navbar-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">
+                                Menú
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>@Html.ActionLink("Cine", "Index", "Cines", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Consumidor", "Index", "Consumidors", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Peliculas", "Index", "Peliculas", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Cartelera", "Index", "ShowPeliculas", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Reservas", "Index", "Reservas", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Fila Asientos", "Index", "FilaAsientos", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Estado Asiento", "Index", "EstadoAsientos", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                                <li>@Html.ActionLink("Descripcion Asiento", "Index", "DescripcionAsientoes", null, new { @class = "dropdown-item" })&nbsp&nbsp&nbsp</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+               @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+</nav>
+

@@ -1,0 +1,89 @@
+﻿@*@model IEnumerable<ProyectoCine.Models.Cines>*@
+@model PagedList.IPagedList<ProyectoCine.Models.Cines>
+@using PagedList.Mvc;
+@using PagedList;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cine</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm("Index", "Cines", FormMethod.Get))
+{
+    <p>
+        Buscar por Nombre de Cine o Administrador: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Buscar" />
+    </p>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink(" Nombre", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Nombre)*@
+        </th>
+        <th>
+            @Html.ActionLink(" Administrador", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            @*@Html.DisplayNameFor(model => model.Administrador)*@
+        </th>
+        <th>
+            @Html.ActionLink(" Direccion", "Index", new { })
+            @*@Html.DisplayNameFor(model => model.Direccion)*@
+        </th>
+        <th>
+            @Html.ActionLink(" Telefono", "Index", new { })
+            @*@Html.DisplayNameFor(model => model.Telefono)*@
+        </th>
+        <th>
+            @Html.ActionLink(" Capcidad_Asientos", "Index", new { })
+            @*@Html.DisplayNameFor(model => model.Capcidad_Asientos)*@
+        </th>
+        <th>
+            @Html.ActionLink(" OtrosDetalles", "Index", new { })
+            @*@Html.DisplayNameFor(model => model.OtrosDetalles)*@
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Administrador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capcidad_Asientos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtrosDetalles)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CinesID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CinesID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CinesID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

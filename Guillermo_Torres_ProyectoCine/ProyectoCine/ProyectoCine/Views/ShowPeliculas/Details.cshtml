@@ -1,0 +1,50 @@
+﻿@model ProyectoCine.Models.ShowPelicula
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShowPelicula</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cines.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cines.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peliculas.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peliculas.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowFin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ShowPeliculaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,56 @@
+﻿@model ProyectoCine.Models.ShowPelicula
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ShowPelicula</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cines.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cines.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peliculas.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peliculas.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowFin)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

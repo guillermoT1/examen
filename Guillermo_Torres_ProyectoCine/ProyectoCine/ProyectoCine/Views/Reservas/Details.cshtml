@@ -1,0 +1,42 @@
+﻿@model ProyectoCine.Models.Reservas
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Consumidor.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consumidor.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaReserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroAsientos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroAsientos)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReservasID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProyectoCine.Models.DescripcionAsiento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Descripcion Asientos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado.DestallesAsiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FilaAsientos.FilaAsientosID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservas.ReservasID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado.DestallesAsiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FilaAsientos.FilaAsientosID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reservas.ReservasID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DescripcionAsientoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DescripcionAsientoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DescripcionAsientoID })
+        </td>
+    </tr>
+}
+
+</table>

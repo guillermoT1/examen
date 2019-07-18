@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProyectoCine.Models.ShowPelicula>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Cartelera</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cines.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peliculas.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowFin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cines.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peliculas.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShowFin)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShowPeliculaID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShowPeliculaID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ShowPeliculaID })
+        </td>
+    </tr>
+}
+
+</table>
